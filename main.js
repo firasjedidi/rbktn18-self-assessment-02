@@ -43,9 +43,11 @@ function map(array, func) {
 // Note: please write one or two lines here describing your solution.
 // var strArr = ['hello', 'world', 'whirled', 'peas'];
 // uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
-
+//we took the map function and we called her in anther function so we can take the values inside the array and to modife them to uppercase
 function uppercaseAll(arrayOfStrings) {
-  // TODO: your code here
+  return map(arrayOfStrings,function(elem,i){
+    return elem.toUpperCase()
+  })
 
 }
 
@@ -75,10 +77,12 @@ var data = [
   }
 ];
 // highestPopulation(data); ==> [{country: "China", population: 1409517397},{country: "India", population: 1339180127}]
-// Note: please write one or two lines here describing your solution.
-
+// Note: please write one or two lines here describing your solution. > 500000000
+//i took the filter function to check the object if it has contrys that has poplation over 500m so the function took the values inside the obj and checked the population 
 function highestPopulation(arrayOfObjects) {
-  // TODO: your code here
+  return filter(arrayOfObjects,function(elem,i){
+    return elem.population > 500000000;
+  })
 
 }
 
@@ -91,9 +95,11 @@ function highestPopulation(arrayOfObjects) {
 // var numsArray = [2, 6, 20, 8, 14];
 // halveAll(numsArray); ==> [ 1, 3, 10, 4, 7 ]
 // Note: please write one or two lines here describing your solution.
-
+//i took the all the values inside the array that already loop througth and divde every single one of them by2
 function halveAll(numbers) {
-  // your code is here
+ return map(numbers,function(elem,i){
+  return elem/2;
+ })
 
 }
 
@@ -105,8 +111,11 @@ function halveAll(numbers) {
 // Note: please write one or two lines here describing your solution.
 
 function values(obj) {
-  // your code is here
-
+var arr =[];
+ each(obj,function(elem,key){
+   arr.push(elem)
+})
+return arr
 }
 
 
